@@ -69,7 +69,7 @@ class UnconnectedLogin extends Component {
   render = () => {
     return (
       <StyledDiv>
-        <h1>Login</h1>
+        <h1>LOGIN</h1>
         <form onSubmit={this.handleSubmit}>
           <StyledSec>
             Username
