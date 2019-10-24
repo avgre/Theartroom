@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 40px;
+`;
+const StyledSec = styled.div`
+  padding: 20px;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  padding-bottom: none;
+  border-bottom: none;
+`;
 class UnconnectedLogin extends Component {
   constructor(props) {
     super(props);
@@ -44,17 +68,27 @@ class UnconnectedLogin extends Component {
   };
   render = () => {
     return (
-      <>
+      <StyledDiv>
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
-          Username
-          <input type="text" onChange={this.handleUsernameChange} />
-          Password
-          <input type="text" onChange={this.handlePasswordChange} />
-          <input type="submit" />
-          <Link to="/signup">Create an Account</Link>
+          <StyledSec>
+            Username
+            <input type="text" onChange={this.handleUsernameChange} />
+          </StyledSec>
+          <StyledSec>
+            Password
+            <input type="text" onChange={this.handlePasswordChange} />
+          </StyledSec>
+          <StyledSec>
+            <Button type="submit">SUBMIT</Button>
+          </StyledSec>
+          <StyledSec>
+            <Button size="small" color="default" component={Link} to="/signup">
+              Create an Account
+            </Button>
+          </StyledSec>
         </form>
-      </>
+      </StyledDiv>
     );
   };
 }

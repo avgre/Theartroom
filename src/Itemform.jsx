@@ -22,6 +22,7 @@ class Itemform extends Component {
     evt.preventDefault();
     const formData = new FormData();
     formData.append('itemName', this.state.itemName);
+    formData.append('itemPrice', this.state.itemPrice);
     formData.append('img', this.state.itemImage);
     fetch('/add-item', {
       method: 'POST',
